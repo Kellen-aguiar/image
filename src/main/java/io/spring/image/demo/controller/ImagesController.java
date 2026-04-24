@@ -34,8 +34,8 @@ public class ImagesController {
                                       @RequestParam("name")String name,
                                       @RequestParam("tags") List<String> tags
     ) throws IOException {
-        log.info("Recebendo tentativa de upload do arquivo: {}", file.getOriginalFilename());
-        log.info("Content Type:{} ", file.getContentType());
+//        log.info("Recebendo tentativa de upload do arquivo: {}", file.getOriginalFilename());
+//        log.info("Content Type:{} ", file.getContentType());
         log.info("Media Type:{} ", MediaType.valueOf(file.getContentType()));
 //            try {
 //                // Lógica de processamento...
@@ -63,7 +63,9 @@ public class ImagesController {
                 .extension(ImageExtension.valueOf(MediaType.valueOf(file.getContentType()))) //como vamos fazer isso? vamos imprimir no console através de nosso log.
                 .file(file.getBytes()) //exception de trohws
                 .build();
-        service.save(image);
+        service.
+
+                save(image);
         return ResponseEntity.ok().build();
     }
 }
